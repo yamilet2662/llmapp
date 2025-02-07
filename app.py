@@ -3,7 +3,7 @@ import firebase_admin
 from firebase_admin import credentials, auth
 
 # Configurar Firebase
-cred = credentials.Certificate("ruta/archivo-key.json")  # 🔹 Asegúrate de subir tu JSON de credenciales
+cred = credentials.Certificate("path/to/serviceAccountKey.json")  # 🔹 Asegúrate de subir tu JSON de credenciales
 firebase_admin.initialize_app(cred)
 
 # Función para autenticar usuarios
