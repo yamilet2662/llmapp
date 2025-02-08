@@ -1,15 +1,16 @@
-import streamlit as st
-import firebase_admin
-from firebase_admin import credentials, auth
+import requests
 
-# Configurar Firebase
-cred = credentials.Certificate("path/to/serviceAccountKey.json")  # 🔹 Asegúrate de subir tu JSON de credenciales
-firebase_admin.initialize_app(cred)
+# Reemplaza con la URL generada por Cloudflared en Colab
+API_URL = "https://xxxx.trycloudflare.com/rag"
 
-# Función para autenticar usuarios
-def login(email, password):
-    try:
-        user = auth.get_user_by_email(email)
-        st.success(f"Bienvenido {user.email} ✅")
-    except Exception as e:
-        st.error(f"Error al iniciar sesión: {e}")
+def assistant_app():
+    st.title("🤖 Asistente Virtual con RAG")
+    st.write(f"¡Bienvenido, {st.session_state.username}! Escribe tu pregunta y el modelo te responderá.")
+
+    query = st.text_input("Escribe tu pregunta aquí:")
+
+    if st.button("Consultar"):
+        response = requests.post(API_URL, json={"text": query})
+        respuesta = response.json().get("response", "Error en la respuesta")
+        st.write(respuesta)
+
