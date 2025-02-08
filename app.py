@@ -1,7 +1,7 @@
 import requests
 
 # Reemplaza con la URL generada por Cloudflared en Colab
-API_URL = "https://xxxx.trycloudflare.com/rag"
+API_URL = " https://archives-rf-yo-bacteria.trycloudflare.com"
 
 def assistant_app():
     st.title("🤖 Asistente Virtual con RAG")
