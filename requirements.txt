@@ -1,7 +1,5 @@
-streamlit
-firebase-admin
-google-auth
-google-auth-oauthlib
-google-auth-httplib2
-google-api-python-client
-requests
+streamlit  
+faiss-cpu  
+transformers  
+sentence-transformers  
+llama-cpp-python
